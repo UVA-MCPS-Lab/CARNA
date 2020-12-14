@@ -4,26 +4,33 @@ html {
 }
 
 body {
-	width: 80%;
+	width: 70%;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 25px;
+	padding-top: 0px;
 }
 
-nav {
+.nav {
 	background-color: #890620;
 	color: #FFFFFF;
-	padding: 1px 25px 1px 25px;
-	border-radius: 20px 20px 0px 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border-radius: 25px 25px 0px 0px;
 }
 
 .main {
 	display: block;
 	background-color: #C4C4C4;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	height: 650px;
+	border-radius: 0px 0px 25px 25px;
+
 }
 
-.main h1, h2, h4, p {
-	padding: 1px 25px 0px 25px;
+h1, h2, h4, p {
+	padding: 10px 25px 10px 25px;
+	margin: 0;
 }
 
 .main h2 {
@@ -31,22 +38,34 @@ nav {
 }
 
 .main h4 {
-	color: #890620;
+	color: #B6465F;
 	font-weight: normal;
 }
 
-.input {
+.input, .procedures, .conditions, .medications {
 	padding-left: 25px;
 }
 
 .col_1, .col_2, .col_3, .col_4 {
 	background-color: #C4C4C4;
-	width: 25%;
+	width: 24%;
 	float: left;
+	padding-right:1%;
 }
 
-input[type=checkbox]{
-	height: 0;
-	width: 0;
-	visibility: hidden;
+.examples, .age, .ef, .hr, .dia, .sys, .rap, .pas, .pad, .pamn, .pcwp, .pcwp_mn, .co, .ci, .mixed,
+.map, .mpap, .cpi, .pp, .ppp, .papp, .svr, .rat, .pprat, .papi, .sapi, .praprat{
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+.weight, .bmi, .ejf, .nyha, .mlhfs, .initial, .total, .alb, .alt, .ast, .bun, .crt, .dial, .hec,
+.hem, .pla, .pot, .sod, .talb, .totp, .wbc {
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+a:link, a:visited { 
+	color: white;
+	text-decoration: none;
 }
