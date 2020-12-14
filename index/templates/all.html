@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HemoPheno4HF</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<style>
+		.main {
+			height: 850px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="nav">
+		<h1>HemoPheno4HF <span style="float: right; font-weight: lighter; font-size: 20px"><a href="./index.html">invasive</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./all.html">all</a></span></h1>
+	</div>
+
+	<div class="main">
+		<h1>Invasive Hemodynamic Phenotyping</h1>
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, minus deleniti. Quia consectetur laboriosam aperiam inventore, suscipit id iusto neque culpa? Perferendis mollitia corporis saepe aspernatur enim necessitatibus voluptatibus earum.</p>
+		<hr>
+		<h2>Patient Parameters</h2>
+		<div class="col_1">
+			<h4>Demographics</h4>
+			<div class="age">
+				<label for="age">Age</label>
+				<input type="number" id="age" name="age" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="weight">
+				<label for="weight">Weight</label>
+				<input type="number" id="weight" name="weight" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="bmi">
+				<label for="bmi">BMI</label>
+				<input type="number" id="bmi" name="bmi" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="ejf">
+				<label for="ejf">Ejection Fraction</label>
+				<input type="number" id="ejf" name="ejf" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="nyha">
+				<label for="nyha">NYHA</label>
+				<input type="number" id="nyha" name="nyha" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="mlhfs">
+				<label for="mlhfs">MLHFS</label>
+				<input type="number" id="mlhfs" name="mlhfs" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<h4>Hospital Days</h4>
+			<div class="initial">
+				<label for="initial">Initial Days</label>
+				<input type="number" id="initial" name="initial" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="total">
+				<label for="total">Total Days</label>
+				<input type="number" id="total" name="total" min=0 style="width: 50px; float: right;">
+			</div>
+			<h4>Devices & Procedures</h4>
+			<div class="procedures">
+				<input type="checkbox" id="cabg" name="cabg" value="cabg">
+				<label for="cabg">Coronary Artery Bypass Grafting</label><br>
+				<input type="checkbox" id="htrans" name="htrans" value="htrans">
+				<label for="htrans">Heart Transplant</label><br>
+				<input type="checkbox" id="icd" name="icd" value="icd">
+				<label for="icd">Implantable Cardiac Defibrillator</label><br>
+				<input type="checkbox" id="pace" name="pace" value="pace">
+				<label for="pace">Pacemaker</label><br>
+				<input type="checkbox" id="icd" name="icd" value="icd">
+				<label for="icd">Implantable Cardiac Defibrillator</label><br>
+			</div>
+		</div>
+
+		<div class="col_2">
+			<h4>Conditions</h4>
+			<div class="conditions">
+				<input type="checkbox" id="isch" name="isch" value="isch">
+				<label for="isch">Ischemic Heart Disease</label><br>
+				<input type="checkbox" id="nonisch" name="nonisch" value="nonisch">
+				<label for="nonisch">Nonischemic Heart Disease</label><br>
+				<input type="checkbox" id="af" name="af" value="af">
+				<label for="af">Atrial Fibrillation</label><br>
+				<input type="checkbox" id="alche" name="alche" value="alche">
+				<label for="alche">Alcoholism</label><br>
+				<input type="checkbox" id="angp" name="angp" value="angp">
+				<label for="angp">Angina Pectoris</label><br>
+				<input type="checkbox" id="arrh" name="arrh" value="arrh">
+				<label for="arrh">Arrhythmias</label><br>
+				<input type="checkbox" id="carrest" name="carrest" value="carrest">
+				<label for="carrest">Cardiac Arrest</label><br>
+				<input type="checkbox" id="cvd" name="cvd" value="cvd">
+				<label for="cvd">Cerebrovascular Disease</label><br>
+				<input type="checkbox" id="copd" name="copd" value="copd">
+				<label for="copd">COPD</label><br>
+				<input type="checkbox" id="depr" name="depr" value="depr">
+				<label for="depr">Depression</label><br>
+				<input type="checkbox" id="diab" name="diab" value="diab">
+				<label for="diab">Diabetes</label><br>
+				<input type="checkbox" id="gout" name="gout" value="gout">
+				<label for="gout">Gout</label><br>
+				<input type="checkbox" id="hept" name="hept" value="hept">
+				<label for="hept">Hepatic Disease</label><br>
+				<input type="checkbox" id="htn" name="htn" value="htn">
+				<label for="htn">Hypertension</label><br>
+				<input type="checkbox" id="malig" name="malig" value="malig">
+				<label for="malig">Malignancy</label><br>
+				<input type="checkbox" id="renal" name="renal" value="renal">
+				<label for="renal">Renal Insufficiency</label><br>
+				<input type="checkbox" id="smoking" name="smoking" value="smoking">
+				<label for="smoking">Cigarette Smoking</label><br>
+				<input type="checkbox" id="sterd" name="sterd" value="sterd">
+				<label for="sterd">Chronic Steroid Use</label><br>
+				<input type="checkbox" id="stroke" name="stroke" value="stroke">
+				<label for="stroke">Stroke</label><br>
+				<input type="checkbox" id="vahd" name="vahd" value="vahd">
+				<label for="vahd">Vascular Heart Disease</label><br>
+				<input type="checkbox" id="vf" name="vf" value="vf">
+				<label for="vf">Ventricular Fabrillation</label><br>
+				<input type="checkbox" id="vhd" name="vhd" value="vhd">
+				<label for="vhd">Valvular Heart Disease</label><br>
+				<input type="checkbox" id="vt" name="vt" value="vt">
+				<label for="vt">Ventricular Tachycardia</label><br>
+			</div>
+
+			<h4>Heart Rate and Blood Pressure</h4>
+				<div class="hr">
+					<label for="hr">Heart Rate</label>
+					<input type="number" id="hr" name="hr" min=0 style="width: 50px; float: right;">
+				</div>
+
+				<div class="dia">
+					<label for="dia">BP Diastolic</label>
+					<input type="number" id="dia" name="dia" min=0 style="width: 50px; float: right;">
+				</div>
+
+				<div class="sys">
+					<label for="sys">BP Systolic</label>
+					<input type="number" id="sys" name="sys" min=0 style="width: 50px; float: right;">
+				</div>
+		</div>
+
+		<div class="col_3">
+			<h4>Labs</h4>
+			<div class="alb">
+					<label for="alb">Albumin</label>
+					<input type="number" id="alb" name="alb" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="alt">
+					<label for="alt">ALT/SGPT</label>
+					<input type="number" id="alt" name="alt" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="ast">
+					<label for="ast">AST/SGOT</label>
+					<input type="number" id="ast" name="ast" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="bun">
+					<label for="bun">Blood Urea Nitrogen</label>
+					<input type="number" id="bun" name="bun" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="crt">
+					<label for="crt">Creatine</label>
+					<input type="number" id="crt" name="crt" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="dial">
+					<label for="dial">Direct Bilirubin</label>
+					<input type="number" id="dial" name="dial" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="hec">
+					<label for="hec">Hematocrit</label>
+					<input type="number" id="hec" name="hec" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="hem">
+					<label for="hem">Hemoglobin</label>
+					<input type="number" id="hem" name="hem" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="pla">
+					<label for="pla">Platelets</label>
+					<input type="number" id="pla" name="pla" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="pot">
+					<label for="pot">Potassium</label>
+					<input type="number" id="pot" name="pot" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="sod">
+					<label for="sod">Sodium</label>
+					<input type="number" id="sod" name="sod" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="talb">
+					<label for="talb">Total Bilirubin</label>
+					<input type="number" id="talb" name="talb" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="totp">
+					<label for="totp">Total Protein</label>
+					<input type="number" id="totp" name="totp" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="wbc">
+					<label for="wbc">White Blood Cells</label>
+					<input type="number" id="wbc" name="wbc" min=0 style="width: 50px; float: right;">
+			</div>
+			<h4>Medications</h4>
+			<div class="medications">
+				<input type="checkbox" id="ace" name="ace" value="ace">
+				<label for="ace">ACE Inhibitor</label><br>
+				<input type="checkbox" id="bet" name="et" value="bet">
+				<label for="bet">Beta Blocker</label><br>
+				<input type="checkbox" id="nit" name="nit" value="nit">
+				<label for="nit">Vasodilators/Nitrates</label><br>
+				<input type="checkbox" id="diuretics" name="diurectics" value="diurectics">
+				<label for="diurectics">Diurectics</label><br>
+			</div>
+		</div>
+
+		<div class="col_4">
+			<button type="button" style="width: 100%">CLEAR FIELDS</button>
+			<hr>
+			<h4>Compute Outcomes</h4>
+			<button type="button" style="width: 100%">DEATH</button><br>
+			<button type="button" style="width: 100%">REHOSPITALIZATION</button><br>
+			<button type="button" style="width: 100%">READMISSION</button><br>
+			<button type="button" style="width: 100%">ALL</button>
+		</div>
+		</span>
+	</div>
+
+</body>
