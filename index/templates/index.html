@@ -6,40 +6,170 @@
 </head>
 
 <body>
-	<nav>
-		<h1>HemoPheno4HF <span style="float: right; font-weight: lighter; font-size: 20px">invasive&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;all</span></h1>
-	</nav>
+	<div class="nav">
+		<h1>HemoPheno4HF <span style="float: right; font-weight: lighter; font-size: 20px"><a href="./index.html">invasive</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./all.html">all</a></span></h1>
+	</div>
 
-	<div class="main"><span style="padding: 5px">
+	<div class="main"><!-- <span style="padding: 5px"> -->
 		<h1>Invasive Hemodynamic Phenotyping</h1>
 		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, minus deleniti. Quia consectetur laboriosam aperiam inventore, suscipit id iusto neque culpa? Perferendis mollitia corporis saepe aspernatur enim necessitatibus voluptatibus earum.</p>
 		<hr>
 		<h2>Patient Parameters</h2>
-			<form>
-				<div class="col_1">
-					<h4>Example Datasets</h4>
-					<div class="input">
-						<input type="radio" id="low" name="data" value="low">
-						<label for="low">low risk</label><br/>
-
-						<input type="radio" id="medium" name="data" value="medium">
-						<label for="medium">medium risk</label><br/>	
-
-						<input type="radio" id="low" name="data" value="high">
-						<label for="high">high risk</label><br/>
-					</div>
-					<h4>Demographics</h4>
+		<div class="col_1">
+			<h4>Example Datasets</h4>
+				<div class="examples">
+					<input type="radio" id="low" name="dataset" value="low">
+					<label for="low">low risk</label><br>
+					<input type="radio" id="medium" name="dataset" value="medium">
+					<label for="medium">medium risk</label><br>
+					<input type="radio" id="high" name="dataset" value="high">
+					<label for="high">high risk</label>
+				</div>
+			<h4>Demographics</h4>
+				<div class="age">
+					<label for="age">Age</label>
+					<input type="number" id="age" name="age" min=0 style="width: 50px; float: right;">
 				</div>
 
-				<div class="col_2">
+				<div class="ef">
+					<label for="ef">Ejection Fraction</label>
+					<input type="number" id="ef" name="ef" min=0 style="width: 50px; float: right;">
+				</div>
+			<h4>Heart Rate and Blood Pressure</h4>
+				<div class="hr">
+					<label for="hr">Heart Rate</label>
+					<input type="number" id="hr" name="hr" min=0 style="width: 50px; float: right;">
 				</div>
 
-				<div class="col_3">
+				<div class="dia">
+					<label for="dia">BP Diastolic</label>
+					<input type="number" id="dia" name="dia" min=0 style="width: 50px; float: right;">
 				</div>
 
-				<div class="col_4">
+				<div class="sys">
+					<label for="sys">BP Systolic</label>
+					<input type="number" id="sys" name="sys" min=0 style="width: 50px; float: right;">
 				</div>
-			</form>
+		</div>
+		<div class="col_2">
+			<h4>Hemodynamics</h4>
+			<div class="rap">
+				<label for="rap">RAP</label>
+				<input type="number" id="rap" name="rap" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="pas">
+				<label for="pas">PAS</label>
+				<input type="number" id="pas" name="pas" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="pad">
+				<label for="pad">PAD</label>
+				<input type="number" id="pad" name="pad" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="pamn">
+				<label for="pamn">PAMN</label>
+				<input type="number" id="pamn" name="pamn" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="pcwp">
+				<label for="pcwp">PCWP</label>
+				<input type="number" id="pcwp" name="pcwp" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="pcwp_mn">
+				<label for="pcwp">PCWP Mean</label>
+				<input type="number" id="pcwp_mn" name="pcwp_mn" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="co">
+				<label for="co">CO</label>
+				<input type="number" id="co" name="co" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="ci">
+				<label for="ci">CI</label>
+				<input type="number" id="ci" name="ci" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="mixed">
+				<label for="mixed">MIXED</label>
+				<input type="number" id="mixed" name="mixed" min=0 style="width: 50px; float: right;">
+			</div>
+		</div>
+		<div class="col_3">
+			<h4>Composite</h4>
+			<div class="map">
+				<label for="map">MAP</label>
+				<input type="number" id="map" name="map" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="mpap">
+				<label for="mpap">MPAP</label>
+				<input type="number" id="mpap" name="mpap" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="cpi">
+				<label for="cpi">CPI</label>
+				<input type="number" id="cpi" name="cpi" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="pp">
+				<label for="pp">PP</label>
+				<input type="number" id="pp" name="pp" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="ppp">
+				<label for="ppp">PPP</label>
+				<input type="number" id="ppp" name="ppp" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="papp">
+				<label for="papp">PAPP</label>
+				<input type="number" id="mixed" name="mixed" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="svr">
+				<label for="svr">SVR</label>
+				<input type="number" id="svr" name="svr" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="rat">
+				<label for="mixed">RAT</label>
+				<input type="number" id="rat" name="rat" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="pprat">
+				<label for="pprat">PPRatio</label>
+				<input type="number" id="pprat" name="pprat" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="papi">
+				<label for="papi">PAPi</label>
+				<input type="number" id="papi" name="papi" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="sapi">
+				<label for="sapi">SAPi</label>
+				<input type="number" id="sapi" name="sapi" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="praprat">
+				<label for="praprat">PRAPRAT</label>
+				<input type="number" id="praprat" name="praprat" min=0 style="width: 50px; float: right;">
+			</div>
+		</div>
+		<div class="col_4">
+			<button type="button" value="Reset" style="width: 100%">CLEAR FIELDS</button>
+			<hr>
+			<h4>Compute Outcomes</h4>
+			<button type="button" style="width: 100%">DEATH</button><br>
+			<button type="button" style="width: 100%">REHOSPITALIZATION</button><br>
+			<button type="button" style="width: 100%">READMISSION</button><br>
+			<button type="button" style="width: 100%">ALL</button>
+
+		</div>
 		</span>
 	</div>
 
