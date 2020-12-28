@@ -69,3 +69,17 @@ a:link, a:visited {
 	color: white;
 	text-decoration: none;
 }
+
+.col_1_2 {
+	background-color: #C4C4C4;
+	width: 24%;
+	float: left;
+	padding-right:1%;
+}
+
+.col_2_2 {
+	background-color: #C4C4C4;
+	width: 74%;
+	float: left;
+	padding-right:1%;
+}
