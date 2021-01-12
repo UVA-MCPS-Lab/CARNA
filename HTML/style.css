@@ -23,7 +23,7 @@ body {
 	background-color: #C4C4C4;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	height: 650px;
+	height: 675px;
 	border-radius: 0px 0px 25px 25px;
 
 }
@@ -54,7 +54,7 @@ h1, h2, h4, p {
 }
 
 .examples, .age, .ef, .hr, .dia, .sys, .rap, .pas, .pad, .pamn, .pcwp, .pcwp_mn, .co, .ci, .mixed,
-.map, .mpap, .cpi, .pp, .ppp, .papp, .svr, .rat, .pprat, .papi, .sapi, .praprat{
+.map, .mpap, .cpi, .pp, .ppp, .papp, .svr, .rat, .pprat, .papi, .sapi, .cpp, .praprat{
 	margin-left: 25px;
 	margin-bottom: 10px;
 }

@@ -72,6 +72,36 @@
 				document.getElementById("pprat").value = 0.266666667;
 			}
 		}
+
+		function calc_comp() {
+			var sys = parseInt(document.getElementById("sys").value);
+			var dia = parseInt(document.getElementById("dia").value);
+			var pas = parseInt(document.getElementById("pas").value); 
+			var pad = parseInt(document.getElementById("pad").value);
+			var pp = 0;
+			var rap = parseInt(document.getElementById("rap").value);
+			var ci = parseInt(document.getElementById("ci").value)
+			var co = parseInt(document.getElementById("co").value);
+			var pcwp = parseInt(document.getElementById("pcwp").value);
+			var hr = parseInt(document.getElementById("hr").value);
+			var map = 0;
+
+			document.getElementById("map").value = sys+(2*dia)/3;
+			map = sys+(2*dia)/3;
+			document.getElementById("mpap").value = pas+(2*pad)/3;
+			document.getElementById("pp").value = sys-dia;
+			pp = sys-dia;
+			document.getElementById("ppp").value = pp/sys;
+			document.getElementById("cpi").value = (ci*map)/451;
+			document.getElementById("papp").value = (pas-pad)/pas;
+			document.getElementById("svr").value = 80*(map-rap)/co;
+			document.getElementById("rat").value = rap/pcwp;
+			document.getElementById("pprat").value = (sys-dia)/hr;
+			document.getElementById("papi").value = (pas-pad)/rap;
+			document.getElementById("sapi").value = (sys-dia)/pcwp;
+			document.getElementById("cpp").value = dia-pcwp;
+			document.getElementById("praprat").value = pp/rap;
+		}
 	</script> 
 </head>
 
@@ -84,18 +114,21 @@
 		<h1>Invasive Hemodynamic Phenotyping</h1>
 		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, minus deleniti. Quia consectetur laboriosam aperiam inventore, suscipit id iusto neque culpa? Perferendis mollitia corporis saepe aspernatur enim necessitatibus voluptatibus earum.</p>
 		<hr>
-		<h2>Patient Parameters</h2>
-		<div class="col_1">
+
+		<form>
+		<center>
 			<h4>Example Datasets</h4>
-			<form>
-				<div class="examples">
-					<input type="radio" id="low" name="dataset" value="low" onclick="fillfields('low')">
-					<label for="low">low risk</label><br>
-					<input type="radio" id="medium" name="dataset" value="medium" onclick="fillfields('medium')">
-					<label for="medium">medium risk</label><br>
-					<input type="radio" id="high" name="dataset" value="high" onclick="fillfields('high')">
-					<label for="high">high risk</label>
-				</div>
+			<div class="examples">
+				<input type="radio" id="low" name="dataset" value="low" onclick="fillfields('low')">
+				<label for="low">low risk</label> 
+				<input type="radio" id="medium" name="dataset" value="medium" onclick="fillfields('medium')">
+				<label for="medium">medium risk</label>
+				<input type="radio" id="high" name="dataset" value="high" onclick="fillfields('high')">
+				<label for="high">high risk</label>
+			</div>
+		</center>
+			<h2>Patient Parameters</h2>
+			<div class="col_1">
 			<h4>Demographics</h4>
 				<div class="age">
 					<label for="age">Age</label>
@@ -168,6 +201,7 @@
 				<span title="Mixed Venous O2"><label for="mixed">MIXED</label></span>
 				<input type="number" id="mixed" name="mixed" step="0.0000000001" min=0 style="width: 50px; float: right;">
 			</div>
+			<input type="button" value="CALCULATE COMPOSITE" style="width: 100%" onclick="calc_comp()">
 		</div>
 		<div class="col_3">
 			<h4>Composite</h4>
@@ -224,6 +258,11 @@
 			<div class="sapi">
 				<span title="Systemic Arterial Pulsatility Index"><label for="sapi">SAPi</label></span>
 				<input type="number" id="sapi" name="sapi" step="0.0000000001" min=0 style="width: 50px; float: right;">
+			</div>
+
+			<div class="cpp">
+				<span title="Coronary Perfusion Pressure"><label for="sapi">CPP</label></span>
+				<input type="number" id="cpp" name="cpp" step="0.0000000001" min=0 style="width: 50px; float: right;">
 			</div>
 
 			<div class="praprat">
