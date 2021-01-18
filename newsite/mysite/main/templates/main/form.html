@@ -2,7 +2,8 @@
 <h1>Form</h1>
 <form method="post" action="/form/">
 	{% csrf_token %}
-	{{form.as_p}}
+	{{form.as_table}}
 	<button type="submit", name="save">Create New</button>
+
 </form>
 </html>
