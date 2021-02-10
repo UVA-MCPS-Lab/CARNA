@@ -35,7 +35,7 @@ def runHemo(paramDict, outcome):
 
     #get outcome
     if outcome == "READMISSION":
-        modelName = 'util/TreeFiles/Hemo_Readmission'
+        modelName = 'main/util/TreeFiles/Hemo_Readmission'
     elif outcome == "DEATH":
         modelName = 'main/util/TreeFiles/Hemo_Death'
     elif outcome == "REHOSPITALIZATION":
