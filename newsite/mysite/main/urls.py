@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .util.MVDD import *
 
 urlpatterns = [
 	path("", views.index, name="index"),

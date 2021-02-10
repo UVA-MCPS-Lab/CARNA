@@ -1,6 +1,7 @@
 # from flask import Flask, redirect, url_for, render_template, request, Response
 # app = Flask (__name__)
 from .Main import *
+from . import MVDD
 
 # @app.route('/',methods=["POST","GET"])
 # def renderMain():
