@@ -82,7 +82,7 @@ def generateRandomMVDD(nodes, maxBranches):
     while childNodes != []:
         dot, childNodes, availableNodes, edgeDict = addChildNodesRandom(dot, childNodes, maxBranches, availableNodes, edgeDict)
 
-    newMvdd = MVDD(features=nodes, dot=dot, root=root)
+    newMvdd = MVDD.MVDD(features=nodes, dot=dot, root=root)
 
     return newMvdd
 
@@ -186,7 +186,7 @@ def generateMVDDFeatureImportance(nodes, terminalOrder, maxBranches):
     while childNodes != []:
         dot, childNodes, availableNodes, edgeDict = addChildNodes(dot, childNodes, maxBranches, availableNodes, edgeDict, terminalOrder)
 
-    newMvdd = MVDD(features=nodes, dot=dot, root=root)
+    newMvdd = MVDD.MVDD(features=nodes, dot=dot, root=root)
 
     return newMvdd
 
@@ -448,7 +448,7 @@ def generateTree(xData, yData, classes, learningCriteria='gini', maxLevels=None,
                 dot.edges[edg[0], edg[1]]['headlabel'] = ""
 
     #Create MVDD
-    mvdd = MVDD(features=xData.columns, dot=dot, root='0', model=dt)
+    mvdd = MVDD.MVDD(features=xData.columns, dot=dot, root='0', model=dt)
     mvdd.terminalIndices = terminalIndices
 
     #Save model to file
@@ -750,7 +750,7 @@ def convertDecisionTreeToMVDD(dt, xData, classes, learningCriteria):
                 dot.edges[edg[0], edg[1]]['headlabel'] = ""
 
     # Create MVDD
-    mvdd = MVDD(features=xData.columns, dot=dot, root='0', model=dt)
+    mvdd = MVDD.MVDD(features=xData.columns, dot=dot, root='0', model=dt)
     mvdd.terminalIndices = terminalIndices
 
     return mvdd
@@ -780,6 +780,7 @@ def getLeftRightLabels(tokens):
 # INPUT = model name
 # OUTPUT = MVDD data structure
 def loadMVDDFromFile(modelName):
+    from . import MVDD
     return pickle.load(open(modelName + '.sav', 'rb'))
 
 # Training for finding best set of model params
