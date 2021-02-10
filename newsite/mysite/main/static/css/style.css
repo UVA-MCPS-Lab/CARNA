@@ -20,7 +20,7 @@ body {
 
 .main {
 	display: block;
-	background-color: #C4C4C4;
+	background-color: #ececec;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	height: 850px;
@@ -30,7 +30,7 @@ body {
 
 .main_all {
 	display: block;
-	background-color: #C4C4C4;
+	background-color: #ececec;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	height: 1050px;
@@ -56,7 +56,7 @@ h1, h2, h4, p {
 }
 
 .col_1, .col_2, .col_3, .col_4 {
-	background-color: #C4C4C4;
+	background-color: #ececec;
 	width: 24%;
 	float: left;
 	padding-right:1%;
