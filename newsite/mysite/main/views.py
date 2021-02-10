@@ -5,6 +5,7 @@ from subprocess import run, PIPE
 import sys
 import os 
 from .util.calculate import *
+from .util.MVDD import *
 
 # Create your views here.
 def index(response):
@@ -65,7 +66,31 @@ def external(request):
 	path = "" 
 
 	string, score, path = get_results(input)
+	# string = "hello"
+	# score = 1
+	# outcome = "DEATH"	
+	chance = ""
+	color = ""
+	if score == 1:
+		chance = "LOW"
+		color = "green"
+	elif score == 2:
+		chance = "LOW INTERMEDIATE"
+		color = "lime"
+	elif score == 3:
+		chance = "INTERMEDIATE"
+		color = "yellow"
+	elif score == 4:
+		chance = "INTERMEDIATE HIGH"
+		color = "orange"
+	else:
+		chance = "HIGH"
+		color = "red"
+
+	# path = "Given the inputted data, the algorithm has returned a score of " + str(score) + ", which means that the risk level is " + chance + ". This score indicates that the patient has a less than 10% chance of the outcome: " + str(outcome)
+
 	# print(results)
 	# return render(request, "main/results.html", {"score":results,"path":path})
+	# "desc":path, "chance":chance, "color":color
 	return render(request, "main/results.html", {"score":score})
 
