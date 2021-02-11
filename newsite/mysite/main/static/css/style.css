@@ -37,6 +37,15 @@ body {
 	border-radius: 0px 0px 25px 25px;	
 }
 
+.main_results {
+	display: block;
+	background-color: #ececec;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	height: 300px;
+	border-radius: 0px 0px 25px 25px;	
+}
+
 h1, h2, h4, p {
 	padding: 10px 25px 10px 25px;
 	margin: 0;
