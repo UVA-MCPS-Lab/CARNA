@@ -17,20 +17,6 @@ def all(response):
 def results(response):
 	return render(response, "main/results.html", {})
 
-# def output(request):
-# 	age = request.POST.get("age")
-# 	out = run(sys.executable, ['//HemoPheno//HemoPheno4HF//newsite//mysite//main//HemoPheno4HF.py', age], shell=False, stout=PIPE)
-
-# 	print(out)
-
-# 	return render(request,'main/base.html',{'data1':out})
-
-# def output(request):
-# 	data = requests.get("https://reqres.in/api/users")
-# 	print(data.text)
-# 	data = data.text
-# 	return render(request,"main/base.html",{'data':data})
-
 def external(request):
 	input = {}
 	input['age'] = request.POST.get('age')
@@ -65,10 +51,10 @@ def external(request):
 	score = 0
 	path = "" 
 
-	string, score, path = get_results(input)
-	# string = "hello"
-	# score = 1
-	# outcome = "DEATH"	
+	# string, score, path = get_results(input)
+	string = "hello"
+	score = 1
+	outcome = "DEATH"	
 	chance = ""
 	color = ""
 	if score == 1:
@@ -87,10 +73,8 @@ def external(request):
 		chance = "HIGH"
 		color = "red"
 
-	# path = "Given the inputted data, the algorithm has returned a score of " + str(score) + ", which means that the risk level is " + chance + ". This score indicates that the patient has a less than 10% chance of the outcome: " + str(outcome)
-
+	desc = "Given the inputted data, the algorithm has returned a score of " + str(score) + ", which means that the risk level is " + chance + ". This score indicates that the patient has a less than 10% chance of the outcome: " + str(outcome)
+	path = "PCWP <= 18.5 | HRTRT > 26.5 | CPI > 0.497 | PAD > 2.5 | MPAP <= 63.5 | BPSYS <= 85.5 | SVR >= 1690.213"
 	# print(results)
-	# return render(request, "main/results.html", {"score":results,"path":path})
-	# "desc":path, "chance":chance, "color":color
-	return render(request, "main/results.html", {"score":score})
+	return render(request, "main/results.html", {"score":score, "desc":desc, "path":path, "chance":chance, "color":color})
 
