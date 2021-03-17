@@ -276,11 +276,17 @@
 		<div class="col_4">
 			<input type="reset" value="CLEAR FIELDS" style="width: 100%">
 			<hr>
-			<h4><center>Compute Outcomes</center></h4>
-			<input type="submit" value="DEATH" style="width: 100%" name="testparam"><br/>
-			<input type="submit" value="REHOSPITALIZATION" style="width: 100%" name="testparam"><br/>
-			<input type="submit" value="READMISSION" style="width: 100%" name="testparam"><br/>
-			<input type="submit" value="ALL" style="width: 100%" name="testparam">
+			<h4><center>Compute Outcomes for...</center></h4>
+			<input type="radio" id="death" value="death" name="testparam">
+			<label for="testparam">Death</label><br/>
+			<input type="radio" id="rehospitaization" value="rehospitalization" name="testparam">
+			<label for="testparam">Rehospitalization</label><br/>
+			<input type="radio" id="readmission" value="readmissino" name="testparam">
+			<label for="testparam">Readmission</label><br/>
+			<input type="radio" id="all" value="all" name="testparam">
+			<label for="testparam">All</label><br/><br/>
+
+			<input type="submit" value="SUBMIT" style="width: 100%">
 
 		</div>
 		</span>
