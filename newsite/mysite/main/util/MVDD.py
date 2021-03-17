@@ -14,6 +14,7 @@ import math
 import copy
 import numpy as np
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
+from . import MVDD_Generator
 
 class MVDD:
     def __init__(self, features, dot, root=None, model=None, featureDict={}):
@@ -23,6 +24,12 @@ class MVDD:
         self.featureDict = featureDict #feature dictionary with ranges for each of the features
         self.model = model
         self.terminalIndices = None
+
+    def __getstate__(self):
+        return self.__dict__
+
+    def __setstate__(self, d):
+        self.__dict__ = d
 
     # Save graph to file in specific format
     # INPUT = filename and format

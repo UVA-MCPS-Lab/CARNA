@@ -8,6 +8,7 @@ LAST UPDATED: 8/28/2020
 import random
 import networkx as nx
 from . import MVDD
+# from MVDD import *
 import copy
 from collections import OrderedDict
 from sklearn.tree import DecisionTreeClassifier
@@ -21,7 +22,6 @@ import pickle
 import pydotplus
 import collections
 from networkx.drawing.nx_pydot import *
-# import Params as params
 from . import Params as params
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -452,7 +452,8 @@ def generateTree(xData, yData, classes, learningCriteria='gini', maxLevels=None,
     mvdd.terminalIndices = terminalIndices
 
     #Save model to file
-    pickle.dump(mvdd, open(modelName+'.sav', 'wb'))
+    with open(modelName+'.sav', 'wb') as x:
+        pickle.dump(mvdd, x)
 
     #Save tree to file
     mvdd.saveDotFile(modelName)
@@ -486,7 +487,8 @@ def generateTreeCrossValidation(xData, yData, classes, learningCriteria='gini', 
     mvdd = convertDecisionTreeToMVDD(dt, xData, classes, learningCriteria)
 
     #Save model to file
-    pickle.dump(mvdd, open('TreeFiles/' + modelName+'.sav', 'wb'))
+    with open('TreeFiles/'+modelName+'.sav', 'wb') as x:
+        pickle.dump(mvdd, x)
 
     #Save tree to file
     mvdd.saveDotFile('TreeFiles/' +modelName)
@@ -780,8 +782,11 @@ def getLeftRightLabels(tokens):
 # INPUT = model name
 # OUTPUT = MVDD data structure
 def loadMVDDFromFile(modelName):
-    from . import MVDD
-    return pickle.load(open(modelName + '.sav', 'rb'))
+    # x = open(modelName + '.sav', 'rb')
+    # import sys
+    # sys.modules['MVDD'] = MVDD
+    with open(modelName + '.sav', 'rb') as x:
+        return pickle.load(x)
 
 # Training for finding best set of model params
 # INPUT = x and y data and params to try

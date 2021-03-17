@@ -6,6 +6,8 @@ ORGANIZATION: University of Virginia, Charlottesville, VA
 LAST UPDATED: 8/24/2020
 '''
 
+from . import MVDD
+
 #List of hemo features
 hemo = ['RAP', 'PAS', 'PAD', 'PAMN', 'PCWP', 'PCWPMod', 'PCWPA', 'PCWPMN', 'CO',
         'CI', 'SVRHemo', 'MIXED', 'BPSYS', 'BPDIAS', 'HRTRT', 'RATHemo', 'MAP',
