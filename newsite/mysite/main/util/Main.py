@@ -39,9 +39,9 @@ def runHemo(paramDict, outcome):
     elif outcome == "DEATH":
         modelName = 'main/util/TreeFiles/Hemo_Death'
     elif outcome == "REHOSPITALIZATION":
-        modelName = 'util/TreeFiles/Hemo_Rehosp'
+        modelName = 'main/util/TreeFiles/Hemo_Rehosp'
     else:
-        modelName = 'util/TreeFiles/Hemo_AllOutcomes'
+        modelName = 'main/util/TreeFiles/Hemo_AllOutcomes'
 
     #load model
     mvdd = gen.loadMVDDFromFile(modelName)

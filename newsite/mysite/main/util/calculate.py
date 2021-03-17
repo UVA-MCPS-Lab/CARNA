@@ -1,7 +1,8 @@
 # from flask import Flask, redirect, url_for, render_template, request, Response
 # app = Flask (__name__)
-from .Main import *
+from . import Main
 from . import MVDD
+from . import MVDD_Generator
 
 # @app.route('/',methods=["POST","GET"])
 # def renderMain():
@@ -49,12 +50,12 @@ from . import MVDD
 
 #     return render_template("main/base.html")
 
-def get_results(data):
+def get_results(data, testparam):
     hemoDict = {'RAP': [0.0, 85.0],
             'PAS': [0.0, 90.0],
             'PAD': [0.0, 59.0],
             'PAMN': [0.0, 82.0],
-            'PCWP': [0.0, 53.0],
+            # 'PCWP': [0.0, 53.0],
             # 'PCWPMod': [0.0, 53.0],
             # 'PCWPA': [0.0, 53.0],
             'PCWPMN': [0.0, 49.0],
@@ -82,7 +83,7 @@ def get_results(data):
         hemoDict[key] = data[key.lower()]
 
     # results = runHemo(hemoDict, params['testparam'])
-    results = runHemo(hemoDict,data["testparam"])
+    results = Main.runHemo(hemoDict,testparam)
     stringy = results[0]
     score = results[1]
     path = results[2]
