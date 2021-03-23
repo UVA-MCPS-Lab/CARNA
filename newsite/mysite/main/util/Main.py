@@ -6,21 +6,19 @@ ORGANIZATION: University of Virginia, Charlottesville, VA
 LAST UPDATED: 8/24/2020
 '''
 
-from . import MVDD
-from . import MVDD_Generator as gen
-# from MVDDGenerator
+from ..util import MVDD_Generator as gen
 import pandas as pd
-import networkx as nx
-from networkx.drawing.nx_pydot import *
+
 # import Params as params
-from . import Params as params
+
+
 
 
 #Expects param dict of 27 parameters, and select one of 4 outcomes
 #Returns a text file location to display the graph, a integer score value and a string phenotype to be displayed
 #Outcome can be "ALL", "DEATH" "REHOSPITALIZATION" "READMISSION" (passed in all caps)
 def runHemo(paramDict, outcome):
-
+    print("outcome", outcome)
     #check for strings in paramDict
     for p in paramDict:
         if paramDict[p] == "":
@@ -45,9 +43,11 @@ def runHemo(paramDict, outcome):
 
     #load model
     mvdd = gen.loadMVDDFromFile(modelName)
+    print("found", mvdd)
 
     #Predict score
     score, path = mvdd.predictScore(input)
+    print("score", score, "path", path)
 
     if score == 5:
         stringPath = "Returned Score of " + str(score) + ", Risk Level: HIGH\nIndicates a >= 40% chance of the outcome " + outcome

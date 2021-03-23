@@ -5,29 +5,30 @@ CODE DEVELOPED BY: Josephine Lamp, Yuxin Wu
 ORGANIZATION: University of Virginia, Charlottesville, VA
 LAST UPDATED: 8/28/2020
 '''
-import random
 import networkx as nx
-from . import MVDD
+
+from ..util.MVDD import MVDD
+
+# from newsite.mysite.main.util import MVDD
+
+# from ..MVDD.MVDD import MVDD
+
+# from MVDD import MVDD
+
+
+# from MVDD.MVDD import MVDD
 # from MVDD import *
 import copy
 from collections import OrderedDict
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import confusion_matrix, classification_report
-from sklearn.model_selection import cross_val_score, cross_validate
-from sklearn.tree import export_graphviz
+from sklearn.metrics import classification_report
 from sklearn.model_selection import GridSearchCV
 from sklearn import tree
 import pickle
 import pydotplus
-import collections
-from networkx.drawing.nx_pydot import *
-from . import Params as params
-import pandas as pd
-from sklearn.model_selection import train_test_split
+# from newsite.mysite.main.util import Params as params
 import numpy as np
 import random
-from itertools import permutations
 import re
 from scipy import interp
 from itertools import cycle
@@ -35,9 +36,7 @@ from sklearn.preprocessing import label_binarize
 from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
 from sklearn.metrics import f1_score,accuracy_score,recall_score,precision_score
-from statistics import mean
 from sklearn.model_selection import StratifiedKFold
-import numpy.ma as ma
 from itertools import zip_longest
 
 # Generate a random MVDD from a starting list of nodes
@@ -778,15 +777,25 @@ def getLeftRightLabels(tokens):
 
     return leftLabel, leftOp, rightLabel, rightOp, param
 
+
+#IMPORTANT ADDED PART --> must show pickle where to find the mvdd module
+import pickle
+
+class CustomUnpickler(pickle.Unpickler):
+
+    def find_class(self, module, name):
+        if name == 'MVDD':
+            from ..util.MVDD import MVDD
+            return MVDD
+        return super().find_class(module, name)
+
+
 # Load Saved MVDD model from file
 # INPUT = model name
 # OUTPUT = MVDD data structure
 def loadMVDDFromFile(modelName):
-    # x = open(modelName + '.sav', 'rb')
-    # import sys
-    # sys.modules['MVDD'] = MVDD
-    with open(modelName + '.sav', 'rb') as x:
-        return pickle.load(x)
+    return CustomUnpickler(open(modelName + '.sav', 'rb')).load()
+
 
 # Training for finding best set of model params
 # INPUT = x and y data and params to try

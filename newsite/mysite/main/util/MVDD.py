@@ -6,15 +6,13 @@ ORGANIZATION: University of Virginia, Charlottesville, VA
 LAST UPDATED: 8/28/2020
 '''
 
-import pydot
 import networkx as nx
 from networkx.drawing.nx_pydot import *
 import collections
-import math
 import copy
 import numpy as np
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
-from . import MVDD_Generator
+
 
 class MVDD:
     def __init__(self, features, dot, root=None, model=None, featureDict={}):
