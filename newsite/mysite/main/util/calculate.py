@@ -82,16 +82,19 @@ def get_results(data, testparam):
         hemoDict[key] = data[key.lower()]
 
     #Josie added test code just to make it work
-    hemoDict['PCWP'] = 0
-    hemoDict['PCWPMod'] = 0
-    hemoDict['PCWPA'] = 0
-    hemoDict['SVRHemo'] = 0
+    hemoDict['PCWP'] = 36
+    hemoDict['PCWPMod'] = 36
+    hemoDict['HRTRT'] = 25
+    hemoDict['PCWPA'] = 36
+    hemoDict['SVRHemo'] = 30
     hemoDict['HRTRT'] = 80
-    hemoDict['RATHemo'] = 0
-    hemoDict['MAP'] = 0
+    hemoDict['RATHemo'] = 30
+    hemoDict['MAP'] = 58
 
     # results = runHemo(hemoDict, params['testparam'])
     results = Main.runHemo(hemoDict,testparam)
+    print(hemoDict)
+    print("RESULTS:", results)
     stringy = results[0]
     score = results[1]
     path = results[2]
