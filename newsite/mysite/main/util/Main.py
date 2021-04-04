@@ -18,9 +18,10 @@ import pandas as pd
 #Returns a text file location to display the graph, a integer score value and a string phenotype to be displayed
 #Outcome can be "ALL", "DEATH" "REHOSPITALIZATION" "READMISSION" (passed in all caps)
 def runHemo(paramDict, outcome):
-    print("outcome", outcome)
+    # print("outcome", outcome)
     #check for strings in paramDict
     for p in paramDict:
+        # print(p, paramDict[p])
         if paramDict[p] == "":
             paramDict[p] = 0
         else:
@@ -28,15 +29,15 @@ def runHemo(paramDict, outcome):
 
     #Convert input into dataframe
     input = pd.Series(paramDict)
-    input = input.to_frame()
+    input = input.to_frame() 
     input = input.T
 
     #get outcome
-    if outcome == "READMISSION":
+    if outcome == "readmission":
         modelName = 'main/util/TreeFiles/Hemo_Readmission'
-    elif outcome == "DEATH":
+    elif outcome == "death":
         modelName = 'main/util/TreeFiles/Hemo_Death'
-    elif outcome == "REHOSPITALIZATION":
+    elif outcome == "rehospitalization":
         modelName = 'main/util/TreeFiles/Hemo_Rehosp'
     else:
         modelName = 'main/util/TreeFiles/Hemo_AllOutcomes'
@@ -63,14 +64,9 @@ def runHemo(paramDict, outcome):
 
     stringPath = ""
     if path != None:
-        # path[-2] = '->'
         stringPath = ' and '.join(path)
-        # print(stringPath)
 
     imageName = modelName + '.png'
-    # imageName = "hi"
-    # score = 2
-    # stringPath = "no.jpg"
 
     return imageName, score, stringPath #will be displayed on webpage
 
