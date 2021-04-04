@@ -8,16 +8,6 @@ LAST UPDATED: 8/28/2020
 import networkx as nx
 
 from ..util.MVDD import MVDD
-
-# from newsite.mysite.main.util import MVDD
-
-# from ..MVDD.MVDD import MVDD
-
-# from MVDD import MVDD
-
-
-# from MVDD.MVDD import MVDD
-# from MVDD import *
 import copy
 from collections import OrderedDict
 from sklearn.tree import DecisionTreeClassifier
